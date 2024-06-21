@@ -1,0 +1,42 @@
+*{margin: 0;padding: 0;box-sizing: border-box}
+h1,h2{display: none;}
+
+#content{
+    width: 350px;
+    height: 500px;
+    border: 1px solid #000;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+#content .message{
+    width: calc(100% - 10px);
+    max-height: 150px;
+    overflow-y: auto;
+    height: auto;
+    margin: 5px;
+    padding: 5px;
+    gap: 2px;
+    background-color: #eee;
+    border-radius: 7px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#content .my.message{
+
+}
+
+.message .name{
+    position: relative;
+    left: 5px;
+    font-size: 11px;
+    font-weight: 100;
+}
+.message .text{
+    position: relative;
+    left: 0;
+    font-size: 15px;
+    font-weight: 300;
+}
