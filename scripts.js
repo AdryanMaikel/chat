@@ -1,9 +1,9 @@
-import { messagens } from "./load.js"
+import { messages } from "./load.js";
 
 
 const user = document.getElementById("user").textContent;
 const content = document.getElementById("content");
-messagens.forEach(message=>{
+messages.forEach(message=>{
     const div = document.createElement("div");
     div.className = user==message.name?"my message":"message"
     const span_name = document.createElement("span");
@@ -15,4 +15,19 @@ messagens.forEach(message=>{
     span_message.innerText = message.message;
     div.appendChild(span_message);
     content.appendChild(div);
+});
+
+var focus = {element: null};
+
+const boxes = document.querySelectorAll(".message");
+boxes.forEach(box=>{
+    box.onclick = ()=>{
+        if(!focus.element){
+            box.classList.add("selected");
+            focus.element = box;
+            return;
+        };
+        focus.element.classList.remove("selected");
+        focus.element = null;
+    };
 });
